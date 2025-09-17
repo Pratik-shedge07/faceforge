@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import EmojiPalette from "../src/Components/EmojiPalette";
-import Canvas from "../src/Components/Canvas";
-import Toolbar from "../src/Components/Toolbar";
+import EmojiPalette from "../components/EmojiPalette";
+import Canvas from "../components/Canvas";
+import Toolbar from "../components/Toolbar";
 
 function App() {
   const [selectedEmoji, setSelectedEmoji] = useState("😀");
   const [emojiSize, setEmojiSize] = useState(50);
+  const [rotation, setRotation] = useState(0);
 
   const appStyle = {
     fontFamily: "Arial, sans-serif",
@@ -21,9 +22,21 @@ function App() {
   return (
     <div style={appStyle}>
       <h1 style={{ marginBottom: "20px" }}>🌟 FaceForge – Emoji Editor</h1>
-      <Toolbar emojiSize={emojiSize} setEmojiSize={setEmojiSize} />
+      
+      <Toolbar
+        emojiSize={emojiSize}
+        setEmojiSize={setEmojiSize}
+        rotation={rotation}
+        setRotation={setRotation}
+      />
+      
       <EmojiPalette setSelectedEmoji={setSelectedEmoji} />
-      <Canvas selectedEmoji={selectedEmoji} emojiSize={emojiSize} />
+      
+      <Canvas
+        selectedEmoji={selectedEmoji}
+        emojiSize={emojiSize}
+        rotation={rotation}
+      />
     </div>
   );
 }
