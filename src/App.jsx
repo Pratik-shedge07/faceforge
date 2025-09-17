@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import EmojiPalette from "../components/EmojiPalette";
-import Canvas from "../components/Canvas";
-import Toolbar from "../components/Toolbar";
+import EmojiPalette from "./components/EmojiPalette";
+import Canvas from "./components/Canvas";
+import Toolbar from "./components/Toolbar";
+
 
 function App() {
   const [selectedEmoji, setSelectedEmoji] = useState("😀");

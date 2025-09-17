@@ -1,23 +1,27 @@
 import React from "react";
 
 function EmojiPalette({ setSelectedEmoji }) {
-  const emojis = ["😀", "😂", "😍", "😎", "🤖", "🔥", "✨", "👽", "🥳"];
+  const emojis = [
+    "😀", "😂", "😍", "🤔", "😎", "😭", "🥳", "😡",
+    "👻", "👽", "🤖", "🐶", "🐱", "🦊", "🐼", "🐸",
+    "🍕", "🍔", "🍩", "🍎", "⚽", "🏀", "🎮", "🎸"
+  ];
 
   const paletteStyle = {
     display: "flex",
-    gap: "10px",
     flexWrap: "wrap",
-    background: "#1f1f1f",
+    gap: "10px",
+    margin: "20px 0",
+    background: "#1e1e1e",
     padding: "15px",
-    borderRadius: "10px",
-    marginBottom: "20px",
+    borderRadius: "12px",
+    maxWidth: "500px",
     justifyContent: "center",
   };
 
   const emojiStyle = {
-    fontSize: "30px",
+    fontSize: "28px",
     cursor: "pointer",
-    transition: "transform 0.2s",
   };
 
   return (
@@ -27,8 +31,6 @@ function EmojiPalette({ setSelectedEmoji }) {
           key={index}
           style={emojiStyle}
           onClick={() => setSelectedEmoji(emoji)}
-          onMouseOver={(e) => (e.target.style.transform = "scale(1.3)")}
-          onMouseOut={(e) => (e.target.style.transform = "scale(1)")}
         >
           {emoji}
         </span>
