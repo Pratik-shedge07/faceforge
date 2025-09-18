@@ -7,14 +7,13 @@ function Canvas({ selectedEmoji, emojiSize, rotation }) {
   const [undoStack, setUndoStack] = useState([]);
   const [redoStack, setRedoStack] = useState([]);
   const [snapToGrid, setSnapToGrid] = useState(false);
-  const [canvasHeight, setCanvasHeight] = useState(400);
   const canvasRef = useRef();
 
   const gridSize = 40;
 
   const canvasStyle = {
     width: "80%",
-    height: `${canvasHeight}px`,
+    height: `400px`, // Fixed height
     background: "#1e1e1e",
     border: "2px dashed #444",
     borderRadius: "12px",
@@ -206,18 +205,7 @@ function Canvas({ selectedEmoji, emojiSize, rotation }) {
           />
           Snap to Grid
         </label>
-        <label style={{ marginLeft: 8 }}>
-          Canvas Height:
-          <input
-            type="range"
-            min={200}
-            max={800}
-            value={canvasHeight}
-            onChange={(e) => setCanvasHeight(Number(e.target.value))}
-            style={{ verticalAlign: "middle", marginLeft: 4 }}
-          />
-          {canvasHeight}px
-        </label>
+        {/* Canvas Height option removed */}
       </div>
       <div
         ref={canvasRef}
