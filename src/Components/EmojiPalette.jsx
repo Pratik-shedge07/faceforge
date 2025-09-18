@@ -111,23 +111,7 @@ function EmojiPalette({ selectedEmoji, setSelectedEmoji }) {
             fontSize: 16
           }}
         />
-        <input
-          type="text"
-          placeholder="Add custom emoji"
-          value={customEmoji}
-          maxLength={2}
-          onChange={e => setCustomEmoji(e.target.value)}
-          style={{
-            width: 60,
-            padding: "6px 10px",
-            borderRadius: 8,
-            border: "1px solid #333",
-            background: "#181818",
-            color: "#fff",
-            fontSize: 22,
-            textAlign: "center"
-          }}
-        />
+       
       </div>
       {/* Recently Used */}
       {recentEmojis.length > 0 && (
